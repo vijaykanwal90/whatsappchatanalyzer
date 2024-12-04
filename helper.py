@@ -111,7 +111,13 @@ def analyze(df):
 
     # Display the overall sentiment (compound score)
     print(f"\nOverall Sentiment (Compound Score): {overall_sentiment}")
+    df['sentiment_category'] = df['compound'].apply(
+        lambda x: 'Positive' if x > 0.05 else ('Negative' if x < -0.05 else 'Neutral'))
     compound_stmt="Positive"
+    # sentiments = df.groupby('user')['compound'].mean().reset_index()
+    # sentiments['sentiment_category'] = sentiments['compound'].apply(
+    #     lambda x: 'Positive' if x > 0.05 else ('Negative' if x < -0.05 else 'Neutral')
+    # )
     # Interpretation of the overall sentiment
     if overall_sentiment >= 0.05:
         # print("Overall sentiment is Positive")

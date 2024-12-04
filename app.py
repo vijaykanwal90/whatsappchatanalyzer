@@ -128,6 +128,17 @@ if uploaded_file is not None:
         with col2:
             st.header("Positivity Score")
             st.title(compound_stmt)
+        sentiment_counts = df['sentiment_category'].value_counts()
+        # st.bar_chart(sentiment_counts)
+
+        # # Display the sentiment pie chart
+        # pie_data= helper.get_plot_pie_chart(user_sentiments)
+        # fig, ax = plt.subplots()
+        # ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+        # ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+        # plt.title(f"Sentiment Distribution for {user}")
+        # plt.show()
+
 
 
 
